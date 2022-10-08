@@ -12,19 +12,19 @@ sample_df = pd.DataFrame( {'x' : x, 'y' : y })
 ax.plot(sample_df["x"], sample_df["y"])
 ax.text(0, 150, "0-10", rotation='vertical')
 
-ax.axvspan(10, 20, color="gray", alpha=0.3, label="10-20")
+ax.axvspan(10, 20, color="gray", alpha=0.2, label="10-20")
 ax.text(10, 150, "10-20", rotation='vertical')
 
 ax.axvspan(30, 40, color="gray", alpha=0.3)
 ax.text(30, 150, "30-40", rotation='vertical')
 
-ax.axvspan(50, 60, color="gray", alpha=0.3)
+ax.axvspan(50, 60, color="gray", alpha=0.4)
 ax.text(50, 150, "50-60", rotation='vertical')
 
-ax.axvspan(70, 80, color="gray", alpha=0.3)
+ax.axvspan(70, 80, color="gray", alpha=0.5)
 ax.text(70, 150, "70-80", rotation='vertical')
 
-ax.axhspan(120, 130, color="green", alpha=0.3, label="120-130")
+ax.axhspan(120, 130, color="green", alpha=0.7, label="120-130")
 ax.text(0, 125, "120-130")
 
 ax.grid()
