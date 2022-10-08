@@ -36,7 +36,7 @@ ax.text(70, 150, "70-80", rotation='vertical')
 
 # x = 90 ～ 100 の範囲を塗りつぶす
 ax.axvspan(90, 100, color="gray", alpha=0.1)
-ax.text(90, 100, "90-", rotation='vertical')
+ax.text(90, 150, "90-", rotation='vertical')
 
 # y = 120 ～ 130 の範囲を塗りつぶす
 ax.axhspan(120, 130, color="green", alpha=0.7, label="120-130")
