@@ -34,6 +34,10 @@ ax.axvspan(70, 80, color="gray", alpha=0.5)
 # (70, 150) の位置に縦方向に "70-80" というテキストを表示する
 ax.text(70, 150, "70-80", rotation='vertical')
 
+# x = 90 ～ 100 の範囲を塗りつぶす
+ax.axvspan(90, 100, color="gray", alpha=0.1)
+ax.text(90, 100, "90-", rotation='vertical')
+
 # y = 120 ～ 130 の範囲を塗りつぶす
 ax.axhspan(120, 130, color="green", alpha=0.7, label="120-130")
 
