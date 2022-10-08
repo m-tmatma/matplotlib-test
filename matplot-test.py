@@ -7,8 +7,6 @@ fig, ax = plt.subplots(figsize=(8, 4))
 x    = np.arange(100)
 y    = np.arange(100,200)
 sample_df = pd.DataFrame( {'x' : x, 'y' : y })
-
-
 ax.plot(sample_df["x"], sample_df["y"])
 ax.text(0, 150, "0-10", rotation='vertical')
 
