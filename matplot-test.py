@@ -25,6 +25,9 @@ ax.text(50, 150, "50-60", rotation='vertical')
 ax.axvspan(70, 80, color="gray", alpha=0.3)
 ax.text(70, 150, "70-80", rotation='vertical')
 
+ax.axhspan(120, 130, color="green", alpha=0.3, label="120-130")
+ax.text(0, 125, "120-130")
+
 ax.grid()
 labels = ax.get_xticklabels()
 plt.setp(labels, rotation=90, fontsize=12);
