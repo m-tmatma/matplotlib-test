@@ -5,17 +5,6 @@ import matplotlib.dates as mdates
 import numpy as np
 from matplotlib.dates import DateFormatter
 
-dates = [datetime.datetime(2018, 1, 1) + datetime.timedelta(hours=k * 6)
-            for k in range(240)]
-temperature = 20 + np.random.randn(len(dates))
-fig, ax = plt.subplots(constrained_layout=True)
-
-ax.plot(dates, temperature)
-ax.set_ylabel(r'$T\ [^oC]$')
-plt.xticks(rotation=90)
-
-ax.xaxis.set_major_formatter(DateFormatter('%Y/%m/%d %H:%M:%S'))
-
 def date2yday(x):
     """
     x is in matplotlib datenums, so they are floats.
@@ -31,6 +20,24 @@ def yday2date(x):
     y = x / 24 + mdates.date2num(datetime.datetime(2018, 1, 1))
     return y
 
+def CtoF(x):
+    return x * 1.8 + 32
+
+
+def FtoC(x):
+    return (x - 32) / 1.8
+
+dates = [datetime.datetime(2018, 1, 1) + datetime.timedelta(hours=k * 6)
+            for k in range(240)]
+temperature = 20 + np.random.randn(len(dates))
+fig, ax = plt.subplots(constrained_layout=True)
+
+ax.plot(dates, temperature)
+ax.set_ylabel(r'$T\ [^oC]$')
+plt.xticks(rotation=90)
+
+ax.xaxis.set_major_formatter(DateFormatter('%Y/%m/%d %H:%M:%S'))
+
 secaxx = ax.secondary_xaxis('bottom', functions=(date2yday, yday2date))
 secaxx.set_xlabel('ellapsed time [hours]')
 ax.xaxis.set_ticks_position('top')
@@ -44,13 +51,6 @@ for l in temp:
     print(l, diff)
     ticks.append(diff * 24)
 secaxx.set_xticks(ticks)
-
-def CtoF(x):
-    return x * 1.8 + 32
-
-
-def FtoC(x):
-    return (x - 32) / 1.8
 
 secaxy = ax.secondary_yaxis('right', functions=(CtoF, FtoC))
 secaxy.set_ylabel(r'$T\ [^oF]$')
