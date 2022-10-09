@@ -13,7 +13,8 @@ dates = drange(date1, date2, delta)
 
 y = arange(len(dates)*1.0)
 
-fig, ax = plt.subplots()
+# https://qiita.com/nkay/items/d1eb91e33b9d6469ef51
+fig, ax = plt.subplots(constrained_layout=True)
 ax.plot(dates, y*y)
 
 # this is superfluous, since the autoscaler should get it right, but
@@ -51,5 +52,5 @@ ax.tick_params(axis='x', rotation=90)
 #fig.autofmt_xdate()
 ax.grid()
 #fig.subplots_adjust()
-fig.tight_layout()
+#fig.tight_layout()
 plt.show()
