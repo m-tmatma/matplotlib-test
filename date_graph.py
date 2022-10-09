@@ -12,7 +12,7 @@ fig, ax = plt.subplots(constrained_layout=True)
 
 ax.plot(dates, temperature)
 ax.set_ylabel(r'$T\ [^oC]$')
-plt.xticks(rotation=70)
+plt.xticks(rotation=90)
 
 ax.xaxis.set_major_formatter(DateFormatter('%Y/%m/%d %H:%M:%S'))
 
@@ -31,8 +31,11 @@ def yday2date(x):
     y = x / 24 + mdates.date2num(datetime.datetime(2018, 1, 1))
     return y
 
-secaxx = ax.secondary_xaxis('top', functions=(date2yday, yday2date))
+secaxx = ax.secondary_xaxis('bottom', functions=(date2yday, yday2date))
 secaxx.set_xlabel('ellapsed time [hours]')
+ax.xaxis.set_ticks_position('top')
+ax.xaxis.set_ticklabels(ax.get_xticks(), rotation=45)
+ax.xaxis.set_major_formatter(DateFormatter('%Y/%m/%d %H:%M:%S'))
 
 ticks = []
 temp = ax.get_xticks()
@@ -53,5 +56,5 @@ secaxy = ax.secondary_yaxis('right', functions=(CtoF, FtoC))
 secaxy.set_ylabel(r'$T\ [^oF]$')
 #plt.savefig('datetime_do.jpg',dpi=100)
 ax.grid()
-#fig.tight_layout()
+fig.tight_layout()
 plt.show()
