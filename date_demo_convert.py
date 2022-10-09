@@ -24,9 +24,9 @@ ax.set_xlim(dates[0], dates[-1])
 
 ax.xaxis.set_major_locator(DayLocator())
 ax.xaxis.set_minor_locator(HourLocator(arange(0, 25, 6)))
-ax.xaxis.set_major_formatter(DateFormatter('%Y-%m-%d %H:%M:%S'))
+ax.xaxis.set_major_formatter(DateFormatter('%m/%d\n%H:%M:%S'))
 
-ax.fmt_xdata = DateFormatter('%Y-%m-%d %H:%M:%S')
+ax.fmt_xdata = DateFormatter('%m/%d\n%H:%M:%S')
 ax.tick_params(axis='x', rotation=90)
 #fig.autofmt_xdate()
 ax.grid()
