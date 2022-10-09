@@ -3,7 +3,7 @@ import datetime
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import numpy as np
-from matplotlib.dates import DayLocator, HourLocator, DateFormatter, drange
+from matplotlib.dates import DateFormatter
 
 dates = [datetime.datetime(2018, 1, 1) + datetime.timedelta(hours=k * 6)
             for k in range(240)]
@@ -15,9 +15,6 @@ ax.set_ylabel(r'$T\ [^oC]$')
 plt.xticks(rotation=70)
 
 ax.xaxis.set_major_formatter(DateFormatter('%Y/%m/%d %H:%M:%S'))
-
-# print(ax.get_xticks())
-# print(ax.get_xticklabels())
 
 def date2yday(x):
     """
