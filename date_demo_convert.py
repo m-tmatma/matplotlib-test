@@ -12,7 +12,7 @@ dates = drange(date1, date2, delta)
 y = arange(len(dates)*1.0)
 
 fig, ax = plt.subplots()
-ax.plot_date(dates, y*y)
+ax.plot(dates, y*y)
 
 # this is superfluous, since the autoscaler should get it right, but
 # use date2num and num2date to convert between dates and floats if
@@ -27,7 +27,8 @@ ax.xaxis.set_minor_locator(HourLocator(arange(0, 25, 6)))
 ax.xaxis.set_major_formatter(DateFormatter('%m/%d\n%H:%M:%S'))
 
 ax.fmt_xdata = DateFormatter('%m/%d\n%H:%M:%S')
-ax.tick_params(axis='x', rotation=90)
+ax.tick_params(axis='x', rotation=45)
 #fig.autofmt_xdate()
 ax.grid()
+fig.subplots_adjust()
 plt.show()
