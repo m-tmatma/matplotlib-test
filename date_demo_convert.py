@@ -27,8 +27,8 @@ ax.set_xlim(dates[0], dates[-1])
 
 # ax.xaxis.set_major_locator(DayLocator())
 # ax.xaxis.set_minor_locator(HourLocator(arange(0, 25, 1)))
-ax.xaxis.set_major_locator(HourLocator(interval=4))
-ax.xaxis.set_minor_locator(HourLocator(interval=1))
+ax.xaxis.set_major_locator(HourLocator(interval=6))
+ax.xaxis.set_minor_locator(HourLocator(interval=3))
 ax.xaxis.set_major_formatter(DateFormatter('%Y/%m/%d %H:%M:%S'))
 
 # https://github.com/Randle9000/pythonCheatSheet/blob/5308a430f0c405a979a8ba17b409bf6b1256ec36/pythonCourseEu/3_NumericalPython/matplotlib_examples/subplots_axes_and_figures/secondary_axis.py#L114-L133
