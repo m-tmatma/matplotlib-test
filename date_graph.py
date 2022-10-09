@@ -21,23 +21,25 @@ def date2yday(x):
     x is in matplotlib datenums, so they are floats.
     """
     y = x - mdates.date2num(datetime.datetime(2018, 1, 1))
-    return y
+    return y * 24
 
 
 def yday2date(x):
     """
     return a matplotlib datenum (x is days since start of year)
     """
-    y = x + mdates.date2num(datetime.datetime(2018, 1, 1))
+    y = x / 24 + mdates.date2num(datetime.datetime(2018, 1, 1))
     return y
 
 secaxx = ax.secondary_xaxis('top', functions=(date2yday, yday2date))
-secaxx.set_xlabel('yday [2018]')
+secaxx.set_xlabel('ellapsed time [hours]')
 
 ticks = []
 temp = ax.get_xticks()
 for l in temp:
-    ticks.append(l - temp[0])
+    diff = l - temp[0]
+    print(l, diff)
+    ticks.append(diff * 24)
 secaxx.set_xticks(ticks)
 
 def CtoF(x):
