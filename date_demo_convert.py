@@ -22,11 +22,13 @@ ax.set_xlim(dates[0], dates[-1])
 # The hour locator takes the hour or sequence of hours you want to
 # tick, not the base multiple
 
-ax.xaxis.set_major_locator(DayLocator())
-ax.xaxis.set_minor_locator(HourLocator(arange(0, 25, 6)))
-ax.xaxis.set_major_formatter(DateFormatter('%Y/%m/%d\n%H:%M:%S'))
+# ax.xaxis.set_major_locator(DayLocator())
+# ax.xaxis.set_minor_locator(HourLocator(arange(0, 25, 1)))
+ax.xaxis.set_major_locator(HourLocator(interval=4))
+ax.xaxis.set_minor_locator(HourLocator(interval=1))
+ax.xaxis.set_major_formatter(DateFormatter('%Y/%m/%d %H:%M:%S'))
 
-ax.fmt_xdata = DateFormatter('%Y/%m/%d\n%H:%M:%S')
+ax.fmt_xdata = DateFormatter('%Y/%m/%d %H:%M:%S')
 ax.tick_params(axis='x', rotation=90)
 #fig.autofmt_xdate()
 ax.grid()
