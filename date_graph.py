@@ -16,6 +16,9 @@ plt.xticks(rotation=70)
 
 ax.xaxis.set_major_formatter(DateFormatter('%Y/%m/%d %H:%M:%S'))
 
+# print(ax.get_xticks())
+# print(ax.get_xticklabels())
+
 def date2yday(x):
     """
     x is in matplotlib datenums, so they are floats.
@@ -34,6 +37,11 @@ def yday2date(x):
 secaxx = ax.secondary_xaxis('top', functions=(date2yday, yday2date))
 secaxx.set_xlabel('yday [2018]')
 
+ticks = []
+temp = ax.get_xticks()
+for l in temp:
+    ticks.append(l - temp[0])
+secaxx.set_xticks(ticks)
 
 def CtoF(x):
     return x * 1.8 + 32
@@ -46,5 +54,5 @@ secaxy = ax.secondary_yaxis('right', functions=(CtoF, FtoC))
 secaxy.set_ylabel(r'$T\ [^oF]$')
 #plt.savefig('datetime_do.jpg',dpi=100)
 ax.grid()
-fig.tight_layout()
+#fig.tight_layout()
 plt.show()
