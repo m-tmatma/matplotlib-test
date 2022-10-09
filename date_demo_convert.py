@@ -3,6 +3,8 @@ import datetime
 import matplotlib.pyplot as plt
 from matplotlib.dates import DayLocator, HourLocator, DateFormatter, drange
 from numpy import arange
+import numpy as np
+import matplotlib.dates as mdates
 
 date1 = datetime.datetime(2000, 3, 2)
 date2 = datetime.datetime(2000, 3, 6)
@@ -27,6 +29,22 @@ ax.set_xlim(dates[0], dates[-1])
 ax.xaxis.set_major_locator(HourLocator(interval=4))
 ax.xaxis.set_minor_locator(HourLocator(interval=1))
 ax.xaxis.set_major_formatter(DateFormatter('%Y/%m/%d %H:%M:%S'))
+
+# https://github.com/Randle9000/pythonCheatSheet/blob/5308a430f0c405a979a8ba17b409bf6b1256ec36/pythonCourseEu/3_NumericalPython/matplotlib_examples/subplots_axes_and_figures/secondary_axis.py#L114-L133
+# https://sabopy.com/py/matplotlib-33/
+# https://matplotlib.org/stable/api/dates_api.html#matplotlib.dates.num2timedelta
+def date2yday(x):
+    """Convert matplotlib datenum to days since """
+    y = x - mdates.date2num(date1)
+    return y
+
+def yday2date(x):
+    """Return a matplotlib datenum for *x* days after """
+    y = x + mdates.date2num(date1)
+    return y
+
+sec_ax = ax.secondary_xaxis('top', functions=(date2yday, yday2date))
+sec_ax.set_xlabel('time elappsed')
 
 ax.fmt_xdata = DateFormatter('%Y/%m/%d %H:%M:%S')
 ax.tick_params(axis='x', rotation=90)
