@@ -1,6 +1,7 @@
 import datetime
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+import matplotlib.ticker as ticker
 import numpy as np
 from matplotlib.dates import DateFormatter
 
@@ -28,7 +29,8 @@ ax.grid()
 ax.plot(x, y)
 
 # label
-ax.set_xticks(x)
+ax.xaxis.set_major_locator(ticker.MultipleLocator(24))
+ax.xaxis.set_minor_locator(ticker.MultipleLocator(6))
 
 secaxx = ax.secondary_xaxis('top', functions=(yday2date, date2yday))
 secaxx.set_xlabel('ellapsed time [hours]')
