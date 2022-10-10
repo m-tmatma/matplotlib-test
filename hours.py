@@ -27,6 +27,9 @@ fig, ax = plt.subplots(constrained_layout=True)
 ax.grid()
 ax.plot(x, y)
 
+# label
+ax.set_xticks(x)
+
 secaxx = ax.secondary_xaxis('top', functions=(yday2date, date2yday))
 secaxx.set_xlabel('ellapsed time [hours]')
 secaxx.xaxis.set_ticklabels(ax.get_xticks(), rotation=90)
