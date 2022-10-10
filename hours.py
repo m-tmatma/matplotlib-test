@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib.ticker as ticker
 import numpy as np
-from matplotlib.dates import DateFormatter
 
 origin = datetime.datetime(2018, 1, 1)
 
@@ -35,6 +34,6 @@ ax.xaxis.set_minor_locator(ticker.MultipleLocator(6))
 secaxx = ax.secondary_xaxis('top', functions=(yday2date, date2yday))
 secaxx.set_xlabel('ellapsed time [hours]')
 secaxx.xaxis.set_ticklabels(ax.get_xticks(), rotation=90)
-secaxx.xaxis.set_major_formatter(DateFormatter('%Y/%m/%d\n%H:%M:%S'))
+secaxx.xaxis.set_major_formatter(mdates.DateFormatter('%Y/%m/%d\n%H:%M:%S'))
 fig.tight_layout()
 plt.show()
