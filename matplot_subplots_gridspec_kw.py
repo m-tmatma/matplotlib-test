@@ -1,3 +1,4 @@
+# sample script to create subplots with different size
 import matplotlib.pyplot as plt
 import numpy as np
 
