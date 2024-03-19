@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 
 # https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html
 # https://qiita.com/MtNouchi/items/7818ed83e825938cdcae
