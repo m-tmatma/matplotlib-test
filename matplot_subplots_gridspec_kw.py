@@ -7,8 +7,8 @@ import numpy as np
 # https://qiita.com/nkay/items/d1eb91e33b9d6469ef51
 
 fig, axes = plt.subplots(
-    2, # 縦
-    1, # 横
+    nrows=2, # 縦
+    ncols=1, # 横
     gridspec_kw=dict(width_ratios=[1], height_ratios=[4, 1], wspace=0.1, hspace=0.3),
     sharex='col',
     sharey='row',
