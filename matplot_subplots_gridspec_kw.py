@@ -9,7 +9,7 @@ import numpy as np
 fig, axes = plt.subplots(
     nrows=2, # 縦
     ncols=1, # 横
-    gridspec_kw=dict(width_ratios=[1], height_ratios=[4, 1], wspace=0.1, hspace=0.3),
+    gridspec_kw={'width_ratios': [1], 'height_ratios': [4, 1], 'wspace': 0.1, 'hspace': 0.3},
     sharex='col',
     sharey='row',
     figsize=(12, 8)
