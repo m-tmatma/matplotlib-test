@@ -7,7 +7,6 @@ import datetime
 import matplotlib.pyplot as plt
 from matplotlib.dates import HourLocator, DateFormatter, drange, date2num
 from numpy import arange
-import numpy as np
 
 date1 = datetime.datetime(2000, 3, 2)
 date2 = datetime.datetime(2000, 3, 6)
