@@ -1,3 +1,6 @@
+'''
+sample code for axvspan and axhspan
+'''
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -48,6 +51,6 @@ ax.grid()
 labels = ax.get_xticklabels()
 
 # rotation=90 で x 軸の目盛りを回転して表示する
-plt.setp(labels, rotation=90, fontsize=12);
+plt.setp(labels, rotation=90, fontsize=12)
 ax.set_title("test")
 plt.show()

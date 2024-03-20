@@ -11,11 +11,11 @@ date2 = datetime.datetime(2000, 3, 6)
 delta = datetime.timedelta(hours=6)
 dates = drange(date1, date2, delta)
 
-y = arange(len(dates)*1.0)
+Y = arange(len(dates)*1.0)
 
 # https://qiita.com/nkay/items/d1eb91e33b9d6469ef51
 fig, ax = plt.subplots(constrained_layout=True)
-ax.plot(dates, y*y)
+ax.plot(dates, Y*Y)
 
 # this is superfluous, since the autoscaler should get it right, but
 # use date2num and num2date to convert between dates and floats if

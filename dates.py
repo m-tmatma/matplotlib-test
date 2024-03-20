@@ -6,11 +6,11 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import numpy as np
 
-x = np.arange(datetime.datetime(2022, 1, 1), datetime.datetime(2023, 1, 1), datetime.timedelta(days=1))
-y = np.linspace(0, 100, x.size)
+X = np.arange(datetime.datetime(2022, 1, 1), datetime.datetime(2023, 1, 1), datetime.timedelta(days=1))
+Y = np.linspace(0, 100, X.size)
 
 fig, ax = plt.subplots(constrained_layout=True)
-ax.plot(x, y)
+ax.plot(X, Y)
 ax.set_ylabel(r'test')
 ax.xaxis.set_label_position('top')
 ax.xaxis.set_ticks_position('top')

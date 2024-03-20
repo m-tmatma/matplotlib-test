@@ -23,12 +23,12 @@ def yday2date(x):
     y = x / 24 + mdates.date2num(origin)
     return y
 
-x = np.arange(0, 24*7, 24)
-y = np.square(x)
+X = np.arange(0, 24*7, 24)
+Y = np.square(X)
 
 fig, ax = plt.subplots(constrained_layout=True)
 ax.grid()
-ax.plot(x, y)
+ax.plot(X, Y)
 
 # label
 ax.xaxis.set_major_locator(ticker.MultipleLocator(24))
