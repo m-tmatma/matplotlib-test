@@ -4,7 +4,7 @@ sample code to show how to use secondary_xaxis to plot data in hours
 import datetime
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-import matplotlib.ticker as ticker
+from matplotlib import ticker
 import numpy as np
 
 origin = datetime.datetime(2018, 1, 1)
