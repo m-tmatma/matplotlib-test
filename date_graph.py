@@ -23,14 +23,14 @@ def yday2date(x):
     y = x / 24 + mdates.date2num(datetime.datetime(2018, 1, 1))
     return y
 
-def CtoF(x):
+def convert_celsius_to_fahrenheit(x):
     '''
     Convert Celsius to Fahrenheit
     '''
     return x * 1.8 + 32
 
 
-def FtoC(x):
+def convert_fahrenheit_to_celsius(x):
     '''
     Convert Fahrenheit to Celsius
     '''
@@ -61,7 +61,7 @@ for l in temp:
     ticks.append(diff * 24)
 secaxx.set_xticks(ticks)
 
-secaxy = ax.secondary_yaxis('right', functions=(CtoF, FtoC))
+secaxy = ax.secondary_yaxis('right', functions=(convert_celsius_to_fahrenheit, convert_fahrenheit_to_celsius))
 secaxy.set_ylabel(r'$T\ [^oF]$')
 #plt.savefig('datetime_do.jpg',dpi=100)
 ax.grid()
