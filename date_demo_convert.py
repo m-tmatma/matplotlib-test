@@ -1,10 +1,9 @@
 # https://matplotlib.org/2.0.2/examples/pylab_examples/date_demo_convert.html
 import datetime
 import matplotlib.pyplot as plt
-from matplotlib.dates import DayLocator, HourLocator, DateFormatter, drange
+from matplotlib.dates import DayLocator, HourLocator, DateFormatter, drange, date2num
 from numpy import arange
 import numpy as np
-import matplotlib.dates as mdates
 
 date1 = datetime.datetime(2000, 3, 2)
 date2 = datetime.datetime(2000, 3, 6)
@@ -36,12 +35,12 @@ ax.xaxis.set_major_formatter(DateFormatter('%Y/%m/%d %H:%M:%S'))
 # https://matplotlib.org/stable/api/dates_api.html#matplotlib.dates.num2timedelta
 def date2yday(x):
     """Convert matplotlib datenum to days since """
-    y = x - mdates.date2num(date1)
+    y = x - date2num(date1)
     return y
 
 def yday2date(x):
     """Return a matplotlib datenum for *x* days after """
-    y = x + mdates.date2num(date1)
+    y = x + date2num(date1)
     return y
 
 sec_ax = ax.secondary_xaxis('top', functions=(date2yday, yday2date))
