@@ -24,10 +24,16 @@ def yday2date(x):
     return y
 
 def CtoF(x):
+    '''
+    Convert Celsius to Fahrenheit
+    '''
     return x * 1.8 + 32
 
 
 def FtoC(x):
+    '''
+    Convert Fahrenheit to Celsius
+    '''
     return (x - 32) / 1.8
 
 dates = [datetime.datetime(2018, 1, 1) + datetime.timedelta(hours=k * 6)
