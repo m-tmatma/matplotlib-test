@@ -1,3 +1,6 @@
+'''
+sample code to demonstrate how to use secondary_xaxis to plot a time series with a secondary x-axis
+'''
 import datetime
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
