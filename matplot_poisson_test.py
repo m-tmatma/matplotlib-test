@@ -6,9 +6,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.special import factorial
 
-lam = 5
+LAMBDA = 5
 t = np.arange(0, 20, 0.1)
-d = np.exp(-lam)*np.power(lam, t)/factorial(t)
+d = np.exp(-LAMBDA)*np.power(LAMBDA, t)/factorial(t)
 
 plt.plot(t, d, 'bs')
 plt.grid()

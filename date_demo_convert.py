@@ -5,7 +5,7 @@ This script demonstrates how to plot dates on the x-axis using Matplotlib.
 # https://matplotlib.org/2.0.2/examples/pylab_examples/date_demo_convert.html
 import datetime
 import matplotlib.pyplot as plt
-from matplotlib.dates import DayLocator, HourLocator, DateFormatter, drange, date2num
+from matplotlib.dates import HourLocator, DateFormatter, drange, date2num
 from numpy import arange
 import numpy as np
 

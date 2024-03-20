@@ -1,3 +1,6 @@
+'''
+sample code for secondary_xaxis
+'''
 # https://sabopy.com/py/matplotlib-33/
 import datetime
 import matplotlib.pyplot as plt
