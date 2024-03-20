@@ -1,3 +1,7 @@
+'''
+This script demonstrates how to plot dates on the x-axis using Matplotlib.
+'''
+
 # https://matplotlib.org/2.0.2/examples/pylab_examples/date_demo_convert.html
 import datetime
 import matplotlib.pyplot as plt
@@ -34,17 +38,17 @@ ax.xaxis.set_major_formatter(DateFormatter('%Y/%m/%d %H:%M:%S'))
 # https://sabopy.com/py/matplotlib-33/
 # https://matplotlib.org/stable/api/dates_api.html#matplotlib.dates.num2timedelta
 def date2yday(x):
-    """Convert matplotlib datenum to days since """
+    """Convert matplotlib datenum to days since date1."""
     y = x - date2num(date1)
     return y
 
 def yday2date(x):
-    """Return a matplotlib datenum for *x* days after """
+    """Return a matplotlib datenum for x days after date1."""
     y = x + date2num(date1)
     return y
 
 sec_ax = ax.secondary_xaxis('top', functions=(date2yday, yday2date))
-sec_ax.set_xlabel('time elappsed')
+sec_ax.set_xlabel('time elapsed')
 
 ax.fmt_xdata = DateFormatter('%Y/%m/%d %H:%M:%S')
 ax.tick_params(axis='x', rotation=90)
